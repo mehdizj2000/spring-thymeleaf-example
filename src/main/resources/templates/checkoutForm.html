@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+<head>
+<meta charset="UTF-8">
+<title th:text="#{index.page.title}">Spring Framework Guru Courses</title>
+
+<link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}" href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+
+
+<script th:src="@{/webjars/jquery/1.11.1/jquery.js}" src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"></script>
+<script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.js}" src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"></script>
+
+<link th:href="@{/css/custome.css}" href="/css/custome.css" rel="stylesheet" />
+
+</head>
+<body>
+	<div class="jumbotron" th:replace="fragments/jumbotron :: jumbotron">
+		<div class="container">
+			<h1>Spring Framework Guru</h1>
+			<p class="lead">Online Courses for Spring Framework</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<h2 class="col-sm-12">checkout page</h2>
+		</div>
+		<form class="form-horizontal" th:action="@{/checkout}" th:object="${customerInfo}" method="POST">
+
+			<div th:if="${#fields.hasAnyErrors()}" class="alert alert-danger">
+				<ul>
+					<li th:each="error : ${#fields.allErrors()}" th:text="${error}"/> 
+				</ul>
+			</div>
+
+			<div class="form-group" th:classappend="${#fields.hasErrors('firstName')} ? 'has-error'">
+				<label class="control-label col-sm-2" for="firstName" th:text="#{customerInfo.firstName}">First Name:</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" th:field="*{firstName}">
+				</div>
+			</div>
+
+			<div class="form-group" th:classappend="${#fields.hasErrors('lastName')} ? 'has-error'">
+				<label class="control-label col-sm-2" for="lastName" th:text="#{customerInfo.lastName}">Last Name:</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" th:field="*{lastName}">
+				</div>
+			</div>
+
+			<div class="form-group" th:classappend="${#fields.hasErrors('phone')} ? 'has-error'">
+				<label class="control-label col-sm-2" for="phone" th:text="#{customerInfo.phone}">Phone:</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" th:field="*{phone}">
+				</div>
+			</div>
+
+			<div class="form-group" th:classappend="${#fields.hasErrors('email')} ? 'has-error'">
+				<label class="control-label col-sm-2" for="email" th:text="#{customerInfo.email}">Email:</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" th:field="*{email}">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-2">
+					<input type="submit" class="btn btn-success" value="submit">
+				</div>
+			</div>
+
+		</form>
+
+	</div>
+
+	<div class="container" th:replace="fragments/jumbotron :: footer">
+		<p>2020 - Spring Framework Guru</p>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+<head>
+<meta charset="UTF-8">
+<title th:text="#{index.page.title}">Spring Framework Guru Courses</title>
+
+<link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}" href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+
+
+<script th:src="@{/webjars/jquery/1.11.1/jquery.js}" src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"></script>
+<script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.js}" src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"></script>
+
+<link th:href="@{/css/custome.css}" href="/css/custome.css" rel="stylesheet" />
+
+</head>
+<body>
+	<div class="jumbotron" th:replace="fragments/jumbotron :: jumbotron">
+		<div class="container">
+			<h1>Spring Framework Guru</h1>
+			<p class="lead">Online Courses for Spring Framework</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<h2 class="col-sm-12">Success</h2>
+		</div>
+	</div>
+
+	<div class="container" th:replace="fragments/jumbotron :: footer">
+		<p>2020 - Spring Framework Guru</p>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Spring Framework Guru - Course Name</title>
+
+<link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}" href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+
+
+<script th:src="@{/webjars/jquery/1.11.1/jquery.js}" src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"></script>
+<script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.js}" src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"></script>
+<link th:href="@{/css/custome.css}" href="/css/custome.css" rel="stylesheet"/>
+
+</head>
+<body>
+	<div class="jumbotron">
+		<div class="container" th:replace="fragments/jumbotron :: jumbotron">
+			<h1>Spring Framework Guru</h1>
+			<p class="lead">Online Courses for Spring Framework</p>
+		</div>
+	</div>
+	<div class="container" th:replace="fragments/jumbotron :: product-details">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 th:text="#{product.page.header}">Spring Framework Guru - Course Name</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="row">
+
+					<div class="col-xl-12">
+						<div class="course-box-image-container">
+							<img role="presentation" th:src="@{/images/SpringCoreDevOpsThumb.png}" src="https://d2vvqscadf4c1f.cloudfront.net/wc9ORhpRQUataALq2ejc_ThumbSPRINcoreDevOps2.png" class="course-box-image">
+						</div>
+						<div class="course-listing-title">Spring Core Dev Ops</div>
+						<div class="course-listing-subtitle">Managing and Deploying Spring Applications in the Enterprise</div>
+					</div>
+
+				</div>
+
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+					<h2>Course Title</h2>
+					<p>In malesuada hendrerit a sagittis lacinia aliquet tincidunt faucibus molestie ut vestibulum et eleifend vestibulum quam scelerisque dignissim. Mi aliquet arcu
+						adipiscing nec condimentum torquent parturient leo a aenean a natoque laoreet metus adipiscing primis libero fermentum etiam condimentum a condimentum. Duis eget
+						vestibulum a a a faucibus interdum egestas a a at ut venenatis adipiscing eget cursus parturient vestibulum laoreet erat enim. Mus ut adipiscing suspendisse sed enim
+						cubilia porta neque tempus parturient habitant a malesuada ad vivamus per faucibus eu vitae a litora integer netus scelerisque. Lacus metus a ac non lacinia mattis a
+						mattis nisl a euismod amet vivamus pulvinar ullamcorper nostra elementum curabitur lobortis nostra vivamus.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-offset-4 col-md-4">
+				<div class="btn btn-success" th:text="#{product.page.buynow}">Buy now</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container" th:replace="fragments/jumbotron :: footer">
+		<p>2020 - Spring Framework Guru</p>
+	</div>
+
+</body>
+</html>
