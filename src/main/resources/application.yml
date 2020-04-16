@@ -11,3 +11,4 @@ spring:
       hibernate.default_schema: thymeleaf_sec_test 
     hibernate:
       ddl-auto: create
+signing-key: uywe8723h9uy9jh2n3di7qh32sinqwundihaskdhkadsfjb      
